@@ -1,13 +1,72 @@
+html {
+	box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+html,
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*:focus:not(:focus-visible),
+*::before:focus:not(:focus-visible),
+*::after:focus:not(:focus-visible) {
+  outline: none;
 }
+
+/* https://medium.com/@matuzo/writing-css-with-accessibility-in-mind-8514a0007939 */
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+/* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+.plain-list {
+  list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
+  padding-left: 0;
+}
+
+/* prettier-ignore */
+@media(prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* CSS HEX */
+:root {
+  --viridian: #498467ff;
+  --baby-powder: #faf8f4ff;
+  --raisin-black: #231f1fff;
+  --marigold: #eca400ff;
+  --xanadu: #7c7f65ff;
+}
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #498467ff, #faf8f4ff, #231f1fff, #eca400ff, #7c7f65ff);
+$gradient-right: linear-gradient(90deg, #498467ff, #faf8f4ff, #231f1fff, #eca400ff, #7c7f65ff);
+$gradient-bottom: linear-gradient(180deg, #498467ff, #faf8f4ff, #231f1fff, #eca400ff, #7c7f65ff);
+$gradient-left: linear-gradient(270deg, #498467ff, #faf8f4ff, #231f1fff, #eca400ff, #7c7f65ff);
+$gradient-top-right: linear-gradient(45deg, #498467ff, #faf8f4ff, #231f1fff, #eca400ff, #7c7f65ff);
+$gradient-bottom-right: linear-gradient(135deg, #498467ff, #faf8f4ff, #231f1fff, #eca400ff, #7c7f65ff);
+$gradient-top-left: linear-gradient(225deg, #498467ff, #faf8f4ff, #231f1fff, #eca400ff, #7c7f65ff);
+$gradient-bottom-left: linear-gradient(315deg, #498467ff, #faf8f4ff, #231f1fff, #eca400ff, #7c7f65ff);
+$gradient-radial: radial-gradient(#498467ff, #faf8f4ff, #231f1fff, #eca400ff, #7c7f65ff);
