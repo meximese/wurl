@@ -12,6 +12,7 @@ function Wurl () {
   // - likely use hook useEffect to instantiate autoplay
   // - remember to tear down w/ react
   // 3: clone extra slides and tweak CSS to add 'infinite' navigation
+  // 4: prefix and bullet-proof the overall CSS
 
   const slideWidth = () => {
     if (window.innerWidth <= 400) {
